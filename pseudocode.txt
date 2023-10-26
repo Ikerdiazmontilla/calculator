@@ -1,0 +1,11 @@
+Make a calculator:
+It is going to have: addition, subtraction, multiplication, division.
+It will be able to handle decimal numbers
+It will accept multiple operations in a row eg. 12 + 7 - 5 * 3
+It will accept to operate based on the answer, for example 5+2 = 7 +3 =10.
+It will have a clear button
+It will have a delete button
+It will accept negative numbers
+If you press an operator that you didn't want to you can change it pressing another operator, but you can't put two operators in a row.
+It will only accept one dot
+A good example: https://michalosman.github.io/calculator/
