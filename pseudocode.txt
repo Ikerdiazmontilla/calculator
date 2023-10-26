@@ -8,4 +8,16 @@ It will have a delete button
 It will accept negative numbers
 If you press an operator that you didn't want to you can change it pressing another operator, but you can't put two operators in a row.
 It will only accept one dot
+It will show the current operation in small above the result. the result in big
+
+Example: 89*6 operation: when we write that at first the calculator has a 0.
+Then you press 89 and the calculator shows 89 in big.
+Then you press * and the calculator shows 89* in little above and 89 in big under.
+
+Then you press 6 and above it shows 89* above and 6 under.
+
+Finally you press = and it shows the result in big and 89*6= in small
+
+Now if you press some operator instead of = it should return the result of the remaining operation in big and in small the result and the operator e.g. result +
+
 A good example: https://michalosman.github.io/calculator/
