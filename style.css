@@ -15,7 +15,7 @@ body{
     flex-direction: column;
     max-width: 392px;
     max-height: 556px;
-    background-color: grey;
+    background-color: rgb(172, 168, 168);
     padding: 22px;
     border: 2px solid black;
     border-radius: 12px;
@@ -30,11 +30,27 @@ body{
 
 .result{
     height: 118px;
-    font-size: 42px;
     background-color: white;
     border-radius: 12px;
     margin-bottom: 22px;
-    padding: 32px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-right: 22px;
+    padding-bottom: 18px;
+    padding-top: 20px;
+    padding-left: 22px;
+}
+
+.operation{
+    font-size: 18px;
+}
+
+.solution{
+    font-size: 40px;
+    
 }
 
 .clear-container{
@@ -74,5 +90,6 @@ body{
     flex-basis: 22%;
     width: 80px;
     height: 64px;
+    border: 2px solid black;
 }
 
