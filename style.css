@@ -93,3 +93,29 @@ body{
     border: 2px solid black;
 }
 
+.operator{
+    font-size: 24px;
+    border-radius: 8px;
+    flex-basis: 22%;
+    width: 80px;
+    height: 64px;
+    border: 2px solid black;
+}
+
+.dot{
+    font-size: 24px;
+    border-radius: 8px;
+    flex-basis: 22%;
+    width: 80px;
+    height: 64px;
+    border: 2px solid black;
+}
+
+.equal{
+    font-size: 24px;
+    border-radius: 8px;
+    flex-basis: 22%;
+    width: 80px;
+    height: 64px;
+    border: 2px solid black;
+}

@@ -1,29 +1,49 @@
 Make a calculator:
-It is going to have: addition, subtraction, multiplication, division.
-It will be able to handle decimal numbers
-It will accept multiple operations in a row eg. 12 + 7 - 5 * 3
-It will accept to operate based on the answer, for example 5+2 = 7 +3 =10.
-It will have a clear button
-It will have a delete button
-It will accept negative numbers
-If you press an operator that you didn't want to you can change it pressing another operator, but you can't put two operators in a row.
-It will only accept one dot
-It will show the current operation in small above the result. the result in big
+Functions:
+    It is going to have: addition, subtraction, multiplication, division.
+    It will be able to handle decimal numbers
+    It will accept multiple operations in a row eg. 12 + 7 - 5 * 3
+    It will accept to operate based on the answer, for example 5+2 = 7 +3 =10.
+    It will have a clear button
+    It will have a delete button
+    It will accept negative numbers
+    If you press an operator that you didn't want to you can change it pressing another operator, but you can't put two operators in a row.
+    It will only accept one dot
+    It will show the current operation in small above the result. the result in big
 
-Example: 89*6 operation: when we write that at first the calculator has a 0.
-Then you press 89 and the calculator shows 89 in big.
-Then you press * and the calculator shows 89* in little above and 89 in big under.
+    Example: 89*6 operation: when we write that at first the calculator has a 0.
+    Then you press 89 and the calculator shows 89 in big.
+    Then you press * and the calculator shows 89* in little above and 89 in big under.
 
-Then you press 6 and above it shows 89* above and 6 under.
+    Then you press 6 and above it shows 89* above and 6 under.
 
-Finally you press = and it shows the result in big and 89*6= in small
+    Finally you press = and it shows the result in big and 89*6= in small
 
-Now if you press some operator instead of = it should return the result of the remaining operation in big and in small the result and the operator e.g. result +
+    Now if you press some operator instead of = it should return the result of the remaining operation in big and in small the result and the operator e.g. result +
 
-Pressing = before entering all of the numbers or an operator could cause problems!
+    Pressing = before entering all of the numbers or an operator could cause problems!
 
-Pressing “clear” should wipe out any existing data.. make sure the user is really starting fresh after pressing “clear”
+    Pressing “clear” should wipe out any existing data.. make sure the user is really starting fresh after pressing “clear”
 
-Display a snarky error message if the user tries to divide by 0… and don’t let it crash your calculator!
+    Display a snarky error message if the user tries to divide by 0… and don’t let it crash your calculator!
+
+
+
+Logic:
+    I have the functions to operate.
+
+    Add event listeners to all numbers. 
+
+    When one is pressed, clear the 0 in the div,store the value in a variable and print it in the results div
+
+    When you press an operator put the actual number space and the operator in the top div
+
+    Then when you press a number after pressing the operator clear the lower div and put the new number
+
+    Then when you press the equal sign just print 'number op number =' and the result under it.
+
+    Don't activate the = button until there is an operator, a number and another operator
+
+    
 
 A good example: https://michalosman.github.io/calculator/
