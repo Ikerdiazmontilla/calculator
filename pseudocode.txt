@@ -29,7 +29,10 @@ Functions:
 
 
 
+
 Logic:
+
+Display:
     I have the functions to operate.
 
     Add event listeners to all numbers. 
@@ -46,6 +49,13 @@ Logic:
 
     For this last line i could do kind of conditional cascade. When you press the operator it doesn't exit the loop until you press another number, once that happens everything works normal
 
-    
+
+
+Operate:
+When to operate: equal pressed, operator is pressed for second time
+Variables: 
+    Solution: Solution of the operation
+    SolutionValue: Value of the divSolution last time it was modified
+    OperationValue: Value of the divOperation last time it was modified
 
 A good example: https://michalosman.github.io/calculator/

@@ -1,43 +1,10 @@
-function add(a,b){
-    return a+b
-}
-
-function subtract(a,b){
-    return a-b
-}
-
-function multiply(a,b){
-    return a*b
-}
-
-function divide(a,b){
-    return a/b
-}
-
-let num1 = 0
-let operator = ""
-let num2 = 0
-
-function operate(a, operator, b){
-    if (operator == '+'){
-        return add(a,b)
-    }
-    else if(operator == '-'){
-        return subtract(a,b)
-    }
-    else if(operator == 'x'){
-        return multiply(a,b)
-    }
-    else if(operator == '/'){
-        return divide(a,b)
-    }
-}
-
 const divOperation = document.querySelector(".operation")
 const divSolution = document.querySelector(".solution")
 
-let solutionValue = 0
-let operationValue = 0
+let aValue = ""
+let bValue = ""
+let operationValue = ""
+let solution = 0
 
 
 function hasOperator(){
@@ -49,8 +16,9 @@ function hasOperator(){
 
 
 function print(event){
-    if(divSolution === ""){
+    if(divSolution.textContent === ""){
         divSolution.textContent += event.target.textContent
+        bValue = divSolution.textContent
     }
     else{
         if(divSolution.textContent == 0)
@@ -58,14 +26,16 @@ function print(event){
         else{
             divSolution.textContent += event.target.textContent
         }
+        aValue = divSolution.textContent
     } 
-    solutionValue = divSolution.textContent
+    
+   
 }
 
 
 function printOperator(event){
     if(hasOperator() && divSolution.textContent === "" || divOperation.textContent === ""){
-    divOperation.textContent = `${solutionValue} ${event.target.textContent}`
+    divOperation.textContent = `${aValue} ${event.target.textContent}`
     operationValue = divOperation.textContent
     divSolution.textContent = ""
     }
@@ -77,19 +47,23 @@ function printOperator(event){
     }
 }
 
-function calculate(){
 
+function calculate(){
+    
+    solution = operate(parseFloat(aValue),operationValue[operationValue.length -1],parseFloat(bValue))
+    console.log(solution)
 }
 
 function printEqual(event){
     if(hasOperator() && divSolution.textContent !== ""){
-    divOperation.textContent += ` ${divSolution.textContent} ${event.target.textContent}`
+    divOperation.textContent += ` ${divSolution.textContent} =`
     divSolution.textContent = solution}
+    aValue = divSolution.textContent
 }
 
 function pressEqual(){
     calculate()
-    printEqual
+    printEqual()
 }
 
 
@@ -114,7 +88,7 @@ operators.forEach(operator => {
 
 
 const equal = document.querySelector(".equal")
-equal.addEventListener("click", printEqual)
+equal.addEventListener("click", pressEqual)
 
 
 
@@ -136,3 +110,42 @@ del.addEventListener("click", () => {
 
 const dot = document.querySelector(".dot")
 dot.addEventListener("click", printDot)
+
+
+
+
+/*Operate*/
+
+function add(a,b){
+    return parseFloat(a+b)
+}
+
+function subtract(a,b){
+    return parseFloat(a-b)
+}
+
+function multiply(a,b){
+    return parseFloat(a*b)
+}
+
+function divide(a,b){
+    return parseFloat(a/b)
+}
+
+
+function operate(a, operator, b){
+    if (operator == '+'){
+        return add(a,b)
+    }
+    else if(operator == '-'){
+        return subtract(a,b)
+    }
+    else if(operator == '×'){
+        return multiply(a,b)
+    }
+    else if(operator == '÷'){
+        return divide(a,b)
+    }
+}
+
+
