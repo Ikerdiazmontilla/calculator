@@ -39,6 +39,7 @@ const divSolution = document.querySelector(".solution")
 let solutionValue = 0
 let operationValue = 0
 
+
 function hasOperator(){
     if(divOperation.textContent[divOperation.textContent.length - 1] === "×" || divOperation.textContent[divOperation.textContent.length - 1] === "+"|| divOperation.textContent[divOperation.textContent.length - 1] === "-"|| divOperation.textContent[divOperation.textContent.length - 1] === "÷"){
         return true
@@ -46,9 +47,10 @@ function hasOperator(){
     return false
 }
 
+
 function print(event){
-    if(hasOperator()){
-        divSolution.textContent = event.target.textContent
+    if(divSolution === ""){
+        divSolution.textContent += event.target.textContent
     }
     else{
         if(divSolution.textContent == 0)
@@ -62,16 +64,32 @@ function print(event){
 
 
 function printOperator(event){
+    if(hasOperator() && divSolution.textContent === "" || divOperation.textContent === ""){
     divOperation.textContent = `${solutionValue} ${event.target.textContent}`
     operationValue = divOperation.textContent
-    divSolution.textContent = divSolution.textContent
+    divSolution.textContent = ""
+    }
+
+    else{
+        calculate()
+        divOperation.textContent = `${solution} ${event.target.textContent}` 
+        divSolution.textContent = ""
+    }
 }
 
+function calculate(){
+
+}
 
 function printEqual(event){
-    if(hasOperator() && divSolution.textContent){
+    if(hasOperator() && divSolution.textContent !== ""){
     divOperation.textContent += ` ${divSolution.textContent} ${event.target.textContent}`
     divSolution.textContent = solution}
+}
+
+function pressEqual(){
+    calculate()
+    printEqual
 }
 
 
