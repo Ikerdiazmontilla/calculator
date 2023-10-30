@@ -44,6 +44,8 @@ Logic:
 
     Don't activate the = button until there is an operator, a number and another operator
 
+    For this last line i could do kind of conditional cascade. When you press the operator it doesn't exit the loop until you press another number, once that happens everything works normal
+
     
 
 A good example: https://michalosman.github.io/calculator/

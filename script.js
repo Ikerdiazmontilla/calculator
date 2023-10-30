@@ -36,8 +36,6 @@ function operate(a, operator, b){
 const divOperation = document.querySelector(".operation")
 const divSolution = document.querySelector(".solution")
 
-
-
 let solutionValue = 0
 let operationValue = 0
 
@@ -50,7 +48,6 @@ function hasOperator(){
 
 function print(event){
     if(hasOperator()){
-
         divSolution.textContent = event.target.textContent
     }
     else{
@@ -64,25 +61,11 @@ function print(event){
 }
 
 
-const numbers = document.querySelectorAll(".number")
-numbers.forEach(number => {
-    number.addEventListener("click", print)
-});
-
-
 function printOperator(event){
     divOperation.textContent = `${solutionValue} ${event.target.textContent}`
     operationValue = divOperation.textContent
-    divSolution.textContent = parseInt(divSolution.textContent)
+    divSolution.textContent = divSolution.textContent
 }
-
-
-const operators = document.querySelectorAll(".operator")
-operators.forEach(operator => {
-    operator.addEventListener("click", printOperator)
-});
-
-
 
 
 function printEqual(event){
@@ -92,10 +75,28 @@ function printEqual(event){
 }
 
 
+function printDot(){
+    if(!divSolution.textContent.includes(".")){
+        divSolution.textContent += dot.textContent
+    }
+}
+
+
+
+const numbers = document.querySelectorAll(".number")
+numbers.forEach(number => {
+    number.addEventListener("click", print)
+});
+
+const operators = document.querySelectorAll(".operator")
+operators.forEach(operator => {
+    operator.addEventListener("click", printOperator)
+});
+
+
 
 const equal = document.querySelector(".equal")
 equal.addEventListener("click", printEqual)
-
 
 
 
@@ -115,3 +116,5 @@ del.addEventListener("click", () => {
     }
 })
 
+const dot = document.querySelector(".dot")
+dot.addEventListener("click", printDot)
