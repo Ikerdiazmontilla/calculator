@@ -33,7 +33,7 @@ function print(event){
 
 
 function printOperator(event){
-
+    
     if (divSolution.textContent[divSolution.textContent.length -1] == ".")
     {
         
@@ -54,7 +54,7 @@ function printOperator(event){
 
 
 function calculate(){
-    solution = operate(parseFloat(valueOperation.substring(0, valueOperation.length -1)),valueOperation[valueOperation.length-1],parseFloat(valueDiv))
+    solution = operate(parseFloat(valueOperation.substring(0, valueOperation.length -2)),valueOperation[valueOperation.length-1],parseFloat(valueDiv))
     let stringSolution = solution.toString()
     if (stringSolution.length > 13){
         solution = solution.toFixed(13)
