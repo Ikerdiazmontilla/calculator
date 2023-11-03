@@ -33,12 +33,17 @@ function print(event){
 
 
 function printOperator(event){
-    if(hasOperator() && divSolution.textContent === "" || divOperation.textContent === ""|| divOperation.textContent[divOperation.textContent.length -1] === "="){
+
+    if (divSolution.textContent[divSolution.textContent.length -1] == ".")
+    {
+        
+    }
+    else if(hasOperator() && divSolution.textContent === "" || divOperation.textContent === ""|| divOperation.textContent[divOperation.textContent.length -1] === "="){
     divOperation.textContent = `${valueDiv} ${event.target.textContent}`
     valueOperation = divOperation.textContent
     divSolution.textContent = ""
     }
-
+    
     else{
         calculate()
         divOperation.textContent = `${solution} ${event.target.textContent}` 
@@ -49,9 +54,12 @@ function printOperator(event){
 
 
 function calculate(){
-    
-    solution = operate(parseFloat(valueOperation.substring(0, valueOperation.length -2)),valueOperation[valueOperation.length-1],parseFloat(valueDiv))
-    
+    solution = operate(parseFloat(valueOperation.substring(0, valueOperation.length -1)),valueOperation[valueOperation.length-1],parseFloat(valueDiv))
+    let stringSolution = solution.toString()
+    if (stringSolution.length > 13){
+        solution = solution.toFixed(13)
+        
+    }
 }
 
 function printEqual(){
@@ -149,9 +157,10 @@ function operate(a, operator, b){
     else if(operator == '×'){
         return multiply(a,b)
     }
-    else if(operator == '÷  '){
+    else if(operator == '÷'){
         return divide(a,b)
     }
 }
+
 
 
